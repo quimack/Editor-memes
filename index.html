@@ -8,23 +8,20 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/1b9c08bf2a.js" crossorigin="anonymous"></script>
 </head>
-<body class="flex-column">
-
-    <header>
-        <div class="header flex-column alignitems-center">
-            <div>
+<body class="light" id="body">
+    <!-- INICIO PANEL PRINCIPAL -->
+    <section id="panelMeme" class="panel-meme">
+        <header class="contenedorHeader flex-column alignitems-center">
             <h1 class="titulo">Generador de Memes</h1>
-            </div>
             <div class="contenedor-botones">
-                    <button class="boton-funcional"><i class="fas fa-file-image"></i>Imagen</button>
-                    <button class="boton-funcional"><i class="fas fa-font"></i>Texto</button>
+                    <button id="botonImagen" class="boton-funcional"><i class="fas fa-file-image"></i>Imagen</button>
+                    <button id="botonTexto" class="boton-funcional"><i class="fas fa-font"></i>Texto</button>
                     <button id="modoClaro" class="boton-funcional"><i class="fas fa-lightbulb"></i>Modo Claro</button>
                     <button id="modoOscuro" class="boton-funcional oculto"><i class="far fa-lightbulb"></i>Modo Oscuro</button> 
             </div>
-        </div>
-    </header>
-    <div class="contenedor-editor flex-column">
-        <main class="container-meme flex-column alignitems-center content-center">
+        </header>
+
+        <main id="mainPrincipal" class="container-meme flex-column alignitems-center content-center">
             <div class="caja-meme flex-column alignitems-center">
                 <p class="textos-meme">TOP TEXT</p>
                 <div id="imagen-meme"></div>
@@ -35,9 +32,75 @@
                 Descargar Meme
             </button>
         </main>
-
+    
+    </section>
         <!-- FIN PANTALLA PRINCIPAL MODO MOBILE -->
 
+        <!-- INICIO ASIDE-->
+        <aside id="aside" class="panel flex-column oculto">
+            <section id="panelImagen" class="panel-control-imagen">
+                <button id="cerrarPanelImagen" class="flex-row content-right"><i class="fas fa-times"></i></button>
+                <h1 class="titulo-aside">IMAGEN</h1>
+                <form action="">
+                    <h2 class="titulo-input">URL</h2>
+                    <input type="text" id="urlImg">
+                   <h2 class="titulo-input">FONDO</h2>
+                        <div class="flex-row content-space-between">
+                            <input type="color" id="fondoImg" value="#FFFFFF">
+                            <div>
+                                <select name="" id="modoDeMezcla">
+                                    <option value="unset">Ninguno</option>
+                                    <option value="lighten">Aclarar</option>
+                                    <option value="darken">Oscurecer</option>
+                                    <option value="difference">Diferencia</option>
+                                    <option value="luminosity">Luminosidad</option>
+                                    <option value="multiply">Multiplicar</option>
+                                </select>
+                            </div>
+                        </div>
+                    </label>
+                        <h2 class="titulo-input">FILTROS</h2>
+                        <div class="flex-column">
+                            <label for="controlBrillo">BRILLO</label>
+                            <input type="range" name="control-brillo" id="controlBrillo" min="0" max="1" value="1" step="0.1">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlOpacidad">OPACIDAD</label>
+                            <input type="range" name="control-opacidad" id="controlOpacidad" min="0" max="1" value="1" step="0.1"> 
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlContraste">CONTRASTE</label>
+                            <input type="range" name="control-contraste" id="controlContraste" min="100" max="1000" value="100">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlDesenfoque">DESENFOQUE</label>
+                            <input type="range" name="control-desenfoque" id="controlDesenfoque" min="0" max="10" step="0.1" value="0">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlGrises">ESCALA DE GRISES</label>
+                            <input type="range" name="control-grises" id="controlGrises" min="0" max="100" value="0">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlSepia">SEPIA</label>
+                            <input type="range" name="control-sepia" id="controlSepia" min="0" max="100" value="0">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlHue">HUE</label>
+                            <input type="range" name="control-hue" id="controlHue" min="0" max="360" value="0">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlSaturado">SATURADO</label>
+                            <input type="range" name="control-saturado" id="controlSaturado" min="100" max="1000" step="10" value="100">
+                        </div>
+                        <div class="flex-column">
+                            <label for="controlNegativo">NEGATIVO</label>
+                            <input type="range" name="control-negativo" id="controlNegativo" min="0" max="1" step="0.1" value="0">
+                        </div>
+                        <button id="reestablecerFiltros">Reestablecer filtros</button>
+                    </fieldset>
+                </form>
+            </section>
+        </aside>
     </div>
     <script src="./js/app.js"></script>
 </body>
