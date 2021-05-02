@@ -17,14 +17,16 @@
                     <button id="botonImagen" class="boton-funcional"><i class="fas fa-file-image"></i>Imagen</button>
                     <button id="botonTexto" class="boton-funcional"><i class="fas fa-font"></i>Texto</button>
                     <button id="modoClaro" class="boton-funcional"><i class="fas fa-lightbulb"></i>Modo Claro</button>
-                    <button id="modoOscuro" class="boton-funcional oculto"><i class="far fa-lightbulb"></i>Modo Oscuro</button> 
+                    <button id="modoOscuro" class="boton-funcional oculto oculto-escritorio"><i class="far fa-lightbulb"></i>Modo Oscuro</button> 
             </div>
         </header>
 
         <main id="mainPrincipal" class="container-meme flex-column alignitems-center content-center">
             <div class="caja-meme flex-column alignitems-center">
                 <p class="textos-meme">TOP TEXT</p>
-                <div id="imagen-meme"></div>
+                <div id="imagen-meme">
+                    <img src="" alt="" id="imgMeme" width="100%" height="100%">
+                </div>
                 <p class="textos-meme">BOTTOM TEXT</p>
             </div>
             <button class="boton-descarga">
@@ -41,7 +43,7 @@
             <section id="panelImagen" class="panel-control-imagen">
                 <button id="cerrarPanelImagen" class="flex-row content-right"><i class="fas fa-times"></i></button>
                 <h1 class="titulo-aside">IMAGEN</h1>
-                <form action="">
+                <form action="" class="formulario">
                     <h2 class="titulo-input">URL</h2>
                     <input type="text" id="urlImg" class="input-paneles">
                     <h2 class="titulo-input">FONDO</h2>
@@ -99,11 +101,70 @@
                 </form>
             </section>
 
-            <section id="panelTexto" class="oculto">
+            <section id="panelTexto" class="oculto oculto-escritorio">
                 <button id="cerrarPanelTexto"><i class="fas fa-times"></i></button>
-                <h1>TEXTO</h1>
-                <label for="topText">SUPERIOR</label>
-                <textarea name="top-text" id="topText" cols="30" rows="10" class="input-paneles"></textarea>
+                <h1 class="titulo-aside">TEXTO</h1>
+                <h3 class="titulo-input">SUPERIOR</h3>
+                <textarea name="top-text" id="topText" cols="30" rows="10" class="input-paneles">TOP TEXT</textarea>
+                <input type="checkbox" name="sin-texto-superior" id="sinTextoSuperior">
+                <label for="sinTextoSuperior">Sin texto superior</label>
+                <h3 class="titulo-input">INFERIOR</h3>
+                <textarea name="bottom-text" id="bottomText" cols="30" rows="10" class="input-paneles">BOTTOM TEXT</textarea>
+                <input type="checkbox" name="sin-texto-inferior" id="sinTextoInferior">
+                <label for="sinTextoInferior">Sin texto inferior</label>
+                <h3 class="titulo-input">FUENTE</h3>
+                <select name="fuente" id="fuenteTexto">
+                    <option value="Arial">Arial</option>
+                    <option value="Impact">Impact</option>
+                    <option value="'Lucida Sans'">Lucida Sans</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="'Segoe UI">Segoe UI</option>
+                    <option value="'Gill Sans'">Gil Sans</option>
+                    <option value="'Franklin Gothic Medium'">Franklin Gothic Medium</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="'Times New Roman'">Times New Roman</option>
+                </select>
+                <div class="flex-row">
+                    <input class="input-paneles" type="number" min="12" value="40" name="tamaño-fuente" id="tamañoFuente">
+                    <button class="boton-panel" id="textAlignLeft">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button id="textAlignCenter">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button id="textAlignRight">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                </div>
+                <div class="flex-row">
+                    <div>
+                        <h3 class="titulo-input">COLOR</h3>
+                        <input type="color" name="color-texto" id="colorTexto">
+                    </div>
+                    <div>
+                        <h3 class="titulo-input">FONDO</h3>
+                        <input type="color" name="fondo-texto" id="fondoTexto">
+                    </div>
+                </div>
+                <input type="checkbox" name="fondo-texto-transparente" id="fondoTextoTransparente">
+                <label for="fondoTextoTransparente">Fondo Transparente</label>
+                <h3 class="titulo-input">CONTORNO</h3>
+                <button id="contornoTextoNinguno">Ninguno</button>
+                <button id="contornoTextoClaro">Claro</button>
+                <button id="contornoTextoOscuro">Oscuro</button>
+                <h3 class="titulo-input">ESPACIADO</h3>
+                <input type="number" name="espaciado-texto" id="espaciadoTexto" min="10" max="50" value="35">
+                <h3 class="titulo-input">INTERLINEADO</h3>
+                <select name="interlineado-texto" id="interlineadoTexto">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+
+
             </section>
         </aside> 
     
