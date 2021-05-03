@@ -20,154 +20,156 @@
                     <button id="modoOscuro" class="boton-funcional oculto oculto-escritorio"><i class="far fa-lightbulb"></i>Modo Oscuro</button> 
             </div>
         </header>
-
         <main id="mainPrincipal" class="container-meme flex-column alignitems-center content-center">
-            <div class="caja-meme flex-column alignitems-center">
-                <p class="textos-meme">TOP TEXT</p>
+            <div class="caja-meme flex-column alignitems-center" id="contenedorMeme">
+                <p class="textos-meme" id="topTextMeme">TOP TEXT</p>
                 <div id="imagen-meme">
                     <img src="" alt="" id="imgMeme" width="100%" height="100%">
                 </div>
-                <p class="textos-meme">BOTTOM TEXT</p>
+                <p class="textos-meme" id="bottomTextMeme">BOTTOM TEXT</p>
             </div>
-            <button class="boton-descarga">
+            <button class="boton-descarga" id="botonDescarga">
                 <i class="fas fa-download"></i>
                 Descargar Meme
             </button>
         </main>
-    
     </section>
-        <!-- FIN PANTALLA PRINCIPAL MODO MOBILE -->
+    <!-- FIN PANTALLA PRINCIPAL MODO MOBILE -->
 
-        <!-- INICIO ASIDE-->
-         <aside id="aside" class="panel flex-column oculto">
-            <section id="panelImagen" class="panel-control-imagen">
-                <button id="cerrarPanelImagen" class="flex-row content-right"><i class="fas fa-times"></i></button>
-                <h1 class="titulo-aside">IMAGEN</h1>
-                <form action="" class="formulario">
-                    <h2 class="titulo-input">URL</h2>
-                    <input type="text" id="urlImg" class="input-paneles">
-                    <h2 class="titulo-input">FONDO</h2>
-                    <div class="flex-row content-space-between">
-                        <input type="color" id="fondoImg" value="#FFFFFF">
-                        <div>
-                            <select name="" id="modoDeMezcla">
-                                <option value="unset">Ninguno</option>
-                                <option value="lighten">Aclarar</option>
-                                <option value="darken">Oscurecer</option>
-                                <option value="difference">Diferencia</option>
-                                <option value="luminosity">Luminosidad</option>
-                                <option value="multiply">Multiplicar</option>
-                            </select>
-                        </div>
-                    </div>
-                    <h2 class="titulo-input">FILTROS</h2>
-                    <div class="flex-column">
-                        <label for="controlBrillo">BRILLO</label>
-                        <input type="range" name="control-brillo" id="controlBrillo" min="0" max="1" value="1" step="0.1">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlOpacidad">OPACIDAD</label>
-                        <input type="range" name="control-opacidad" id="controlOpacidad" min="0" max="1" value="1" step="0.1"> 
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlContraste">CONTRASTE</label>
-                        <input type="range" name="control-contraste" id="controlContraste" min="100" max="1000" value="100">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlDesenfoque">DESENFOQUE</label>
-                        <input type="range" name="control-desenfoque" id="controlDesenfoque" min="0" max="10" step="0.1" value="0">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlGrises">ESCALA DE GRISES</label>
-                        <input type="range" name="control-grises" id="controlGrises" min="0" max="100" value="0">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlSepia">SEPIA</label>
-                        <input type="range" name="control-sepia" id="controlSepia" min="0" max="100" value="0">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlHue">HUE</label>
-                        <input type="range" name="control-hue" id="controlHue" min="0" max="360" value="0">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlSaturado">SATURADO</label>
-                        <input type="range" name="control-saturado" id="controlSaturado" min="100" max="1000" step="10" value="100">
-                    </div>
-                    <div class="flex-column">
-                        <label for="controlNegativo">NEGATIVO</label>
-                        <input type="range" name="control-negativo" id="controlNegativo" min="0" max="1" step="0.1" value="0">
-                    </div>
-                    <button id="reestablecerFiltros">Reestablecer filtros</button>
-                </form>
-            </section>
+    <!-- INICIO ASIDE-->
+    <aside id="aside" class="panel flex-column oculto">
+      <!-- PANEL DE IMAGEN-->
+        <section id="panelImagen" class="panel-control-imagen">
+           <button id="cerrarPanelImagen" class="flex-row content-right"><i class="fas fa-times"></i></button>
+           <h1 class="titulo-aside">IMAGEN</h1>
+           <form action="" class="formulario">
+               <h2 class="titulo-input">URL</h2>
+               <input type="text" id="urlImg" class="input-paneles">
+               <h2 class="titulo-input">FONDO</h2>
+               <div class="flex-row content-space-between">
+                   <input type="color" id="fondoImg" value="#FFFFFF">
+                   <div>
+                       <select name="" id="modoDeMezcla">
+                           <option value="unset">Ninguno</option>
+                           <option value="lighten">Aclarar</option>
+                           <option value="darken">Oscurecer</option>
+                           <option value="difference">Diferencia</option>
+                           <option value="luminosity">Luminosidad</option>
+                           <option value="multiply">Multiplicar</option>
+                       </select>
+                   </div>
+               </div>
+               <h2 class="titulo-input">FILTROS</h2>
+               <div class="flex-column">
+                   <label for="controlBrillo">BRILLO</label>
+                   <input type="range" name="control-brillo" id="controlBrillo" min="0" max="1" value="1" step="0.1">
+               </div>
+               <div class="flex-column">
+                   <label for="controlOpacidad">OPACIDAD</label>
+                   <input type="range" name="control-opacidad" id="controlOpacidad" min="0" max="1" value="1" step="0.1"> 
+               </div>
+               <div class="flex-column">
+                   <label for="controlContraste">CONTRASTE</label>
+                   <input type="range" name="control-contraste" id="controlContraste" min="100" max="1000" value="100">
+               </div>
+               <div class="flex-column">
+                   <label for="controlDesenfoque">DESENFOQUE</label>
+                   <input type="range" name="control-desenfoque" id="controlDesenfoque" min="0" max="10" step="0.1" value="0">
+               </div>
+               <div class="flex-column">
+                   <label for="controlGrises">ESCALA DE GRISES</label>
+                   <input type="range" name="control-grises" id="controlGrises" min="0" max="100" value="0">
+               </div>
+               <div class="flex-column">
+                   <label for="controlSepia">SEPIA</label>
+                   <input type="range" name="control-sepia" id="controlSepia" min="0" max="100" value="0">
+               </div>
+               <div class="flex-column">
+                   <label for="controlHue">HUE</label>
+                   <input type="range" name="control-hue" id="controlHue" min="0" max="360" value="0">
+               </div>
+               <div class="flex-column">
+                   <label for="controlSaturado">SATURADO</label>
+                   <input type="range" name="control-saturado" id="controlSaturado" min="100" max="1000" step="10" value="100">
+               </div>
+               <div class="flex-column">
+                   <label for="controlNegativo">NEGATIVO</label>
+                   <input type="range" name="control-negativo" id="controlNegativo" min="0" max="1" step="0.1" value="0">
+               </div>
+               <button id="reestablecerFiltros">Reestablecer filtros</button>
+           </form>
+       </section>
 
-            <section id="panelTexto" class="oculto oculto-escritorio">
-                <button id="cerrarPanelTexto"><i class="fas fa-times"></i></button>
-                <h1 class="titulo-aside">TEXTO</h1>
-                <h3 class="titulo-input">SUPERIOR</h3>
-                <textarea name="top-text" id="topText" cols="30" rows="10" class="input-paneles">TOP TEXT</textarea>
-                <input type="checkbox" name="sin-texto-superior" id="sinTextoSuperior">
-                <label for="sinTextoSuperior">Sin texto superior</label>
-                <h3 class="titulo-input">INFERIOR</h3>
-                <textarea name="bottom-text" id="bottomText" cols="30" rows="10" class="input-paneles">BOTTOM TEXT</textarea>
-                <input type="checkbox" name="sin-texto-inferior" id="sinTextoInferior">
-                <label for="sinTextoInferior">Sin texto inferior</label>
-                <h3 class="titulo-input">FUENTE</h3>
-                <select name="fuente" id="fuenteTexto">
-                    <option value="Arial">Arial</option>
-                    <option value="Impact">Impact</option>
-                    <option value="'Lucida Sans'">Lucida Sans</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="'Segoe UI">Segoe UI</option>
-                    <option value="'Gill Sans'">Gil Sans</option>
-                    <option value="'Franklin Gothic Medium'">Franklin Gothic Medium</option>
-                    <option value="Helvetica">Helvetica</option>
-                    <option value="'Times New Roman'">Times New Roman</option>
-                </select>
-                <div class="flex-row">
-                    <input class="input-paneles" type="number" min="12" value="40" name="tamaño-fuente" id="tamañoFuente">
-                    <button class="boton-panel" id="textAlignLeft">
-                        <i class="fas fa-align-left"></i>
-                    </button>
-                    <button id="textAlignCenter">
-                        <i class="fas fa-align-center"></i>
-                    </button>
-                    <button id="textAlignRight">
-                        <i class="fas fa-align-right"></i>
-                    </button>
-                </div>
-                <div class="flex-row">
-                    <div>
-                        <h3 class="titulo-input">COLOR</h3>
-                        <input type="color" name="color-texto" id="colorTexto">
-                    </div>
-                    <div>
-                        <h3 class="titulo-input">FONDO</h3>
-                        <input type="color" name="fondo-texto" id="fondoTexto">
-                    </div>
-                </div>
-                <input type="checkbox" name="fondo-texto-transparente" id="fondoTextoTransparente">
-                <label for="fondoTextoTransparente">Fondo Transparente</label>
-                <h3 class="titulo-input">CONTORNO</h3>
-                <button id="contornoTextoNinguno">Ninguno</button>
-                <button id="contornoTextoClaro">Claro</button>
-                <button id="contornoTextoOscuro">Oscuro</button>
-                <h3 class="titulo-input">ESPACIADO</h3>
-                <input type="number" name="espaciado-texto" id="espaciadoTexto" min="10" max="50" value="35">
-                <h3 class="titulo-input">INTERLINEADO</h3>
-                <select name="interlineado-texto" id="interlineadoTexto">
-                    <option value="0.8">0.8</option>
-                    <option value="1">1</option>
-                    <option value="1.2">1.2</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
-                    <option value="2.5">2.5</option>
-                </select>
+       <!--     PANEL DE TEXTO    -->
+       <section id="panelTexto" class="oculto oculto-escritorio">
+           <button id="cerrarPanelTexto"><i class="fas fa-times"></i></button>
+           <h1 class="titulo-aside">TEXTO</h1>
+           <h3 class="titulo-input">SUPERIOR</h3>
+           <textarea name="top-text" id="topText" cols="30" rows="10" class="input-paneles">TOP TEXT</textarea>
+           <input type="checkbox" name="sin-texto-superior" id="sinTextoSuperior">
+           <label for="sinTextoSuperior">Sin texto superior</label>
+           <h3 class="titulo-input">INFERIOR</h3>
+           <textarea name="bottom-text" id="bottomText" cols="30" rows="10" class="input-paneles">BOTTOM TEXT</textarea>
+           <input type="checkbox" name="sin-texto-inferior" id="sinTextoInferior">
+           <label for="sinTextoInferior">Sin texto inferior</label>
+           <h3 class="titulo-input">FUENTE</h3>
+           <select name="fuente" id="fuenteTexto">
+               <option value="Arial">Arial</option>
+               <option value="Impact">Impact</option>
+               <option value="'Lucida Sans'">Lucida Sans</option>
+               <option value="Verdana">Verdana</option>
+               <option value="'Segoe UI">Segoe UI</option>
+               <option value="'Gill Sans'">Gil Sans</option>
+               <option value="'Franklin Gothic Medium'">Franklin Gothic Medium</option>
+               <option value="Helvetica">Helvetica</option>
+               <option value="'Times New Roman'">Times New Roman</option>
+           </select>
+           <div class="flex-row">
+               <input class="input-paneles" type="number" min="12" value="40" name="tamaño-fuente" id="tamañoFuente">
+               <button class="boton-panel" id="textAlignLeft">
+                   <i class="fas fa-align-left"></i>
+               </button>
+               <button id="textAlignCenter">
+                   <i class="fas fa-align-center"></i>
+               </button>
+               <button id="textAlignRight">
+                   <i class="fas fa-align-right"></i>
+               </button>
+           </div>
+           <div class="flex-row">
+               <div>
+                   <h3 class="titulo-input">COLOR</h3>
+                   <input type="color" name="color-texto" id="colorTexto">
+               </div>
+               <div>
+                   <h3 class="titulo-input">FONDO</h3>
+                   <input type="color" name="fondo-texto" id="fondoTexto">
+               </div>
+           </div>
+           <input type="checkbox" name="fondo-texto-transparente" id="fondoTextoTransparente">
+           <label for="fondoTextoTransparente">Fondo Transparente</label>
+           <h3 class="titulo-input">CONTORNO</h3>
+           <button id="contornoTextoNinguno">Ninguno</button>
+           <button id="contornoTextoClaro">Claro</button>
+           <button id="contornoTextoOscuro">Oscuro</button>
+           <h3 class="titulo-input">ESPACIADO</h3>
+           <input type="number" name="espaciado-texto" id="espaciadoTexto" min="10" max="50" value="35">
+           <h3 class="titulo-input">INTERLINEADO</h3>
+           <select name="interlineado-texto" id="interlineadoTexto">
+               <option value="0.8">0.8</option>
+               <option value="1">1</option>
+               <option value="1.2">1.2</option>
+               <option value="1.5">1.5</option>
+               <option value="2">2</option>
+               <option value="2.5">2.5</option>
+           </select>
 
 
-            </section>
-        </aside> 
+       </section>
+    </aside> 
     
     <script src="./js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -146,8 +146,9 @@ body{
     cursor: pointer;
     border: none;
 }
-
-
+.cc{
+    filter: inv
+}
  /* ESTILO PANEL IMAGEN */
  .panel{
      width: 100%;
@@ -157,7 +158,8 @@ body{
      z-index: 10;
      position: fixed;
      top: 0;
-     
+     overflow: auto;
+     height: 100%;
  }
  input, textarea, select, .boton-panel{
      background-color: var(--background-input);
@@ -165,6 +167,7 @@ body{
      margin: 5px 5px 5px 0;
      border-radius: 5px;
  }
+
  #cerrarPanelImagen{
      cursor: pointer;
      border: none;
