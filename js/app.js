@@ -22,9 +22,8 @@ const sepia = document.querySelector('#controlSepia');
 const hue = document.querySelector('#controlHue');
 const saturado = document.querySelector('#controlSaturado');
 const negativo = document.querySelector('#controlNegativo');
-//DESCARGA IMAGEN
-const botonDescarga = document.getElementById('botonDescarga');
-const contenedorMeme = document.getElementById('contenedorMeme');
+const reestablecerFiltros = document.querySelector('#reestablecerFiltros');
+
 //INPUTS TEXTO Y MODIFICADORES
 const topText = document.querySelector('#topText');
 const bottomText = document.querySelector('#bottomText');
@@ -36,12 +35,10 @@ const colorTexto = document.querySelector('#colorTexto');
 const fondoTexto = document.querySelector('#fondoTexto');
 const fondoTextoTransparente = document.querySelector('#fondoTextoTransparente');
 
-imgMeme.src = "https://images.adsttc.com/media/images/5d34/e507/284d/d109/5600/0240/newsletter/_FI.jpg?1563747560";
-
 //IR A MODO OSCURO 
 modoClaro.addEventListener('click', () => {
-   body.classList.toggle('dark');
-   body.classList.toggle('light');
+    body.classList.toggle('dark');
+    body.classList.toggle('light');
     modoClaro.classList.toggle('oculto');
     modoOscuro.classList.toggle('oculto');
 });
@@ -84,19 +81,17 @@ cerrarPanelTexto.addEventListener('click', () => {
     panelTexto.classList.add('oculto')
 }); 
 
-
-
 //    FUNCIONALIDADES PANEL IMAGEN
 
 //URL
-urlImg.addEventListener('change', () => {
+urlImg.addEventListener('input', () => {
     imgMeme.src = urlImg.value
-});
+});                 
 
 //FILTROS
 const actualizarFiltros = () => {
     imgMeme.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px)
-    grayscale(${grises.value}) sepia(${sepia.value}) hue-rotate(${hue.value}) saturate(${saturado.value}) invert(${negativo.value})`;
+    grayscale(${grises.value}%) sepia(${sepia.value}%) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
   }
 
   brillo.addEventListener("change", actualizarFiltros);
@@ -109,13 +104,27 @@ const actualizarFiltros = () => {
   saturado.addEventListener("change", actualizarFiltros);
   negativo.addEventListener("change", actualizarFiltros);
 
+reestablecerFiltros.addEventListener('click', () =>{
+    brillo.value = 1;
+    opacidad.value = 1;
+    contraste.value = 100;
+    desenfoque.value = 0;
+    grises.value = 0;
+    sepia.value = 0;
+    hue.value = 0;
+    saturado.value = 100;
+    negativo.value = 1;
+    actualizarFiltros();
+});
+
+
 // FUNCIONALIDADES PANEL TEXTO
 topText.addEventListener('input', () =>{
-    topTextMeme.textContent = topText.value;
+    topTextMeme.innerText = topText.value;
 });
 
 bottomText.addEventListener('input', () =>{
-    bottomTextMeme.textContent = bottomText.value;
+    bottomTextMeme.innerText = bottomText.value;
 });
 
 fuenteTexto.addEventListener('change', () => {
@@ -151,10 +160,15 @@ fondoTextoTransparente.addEventListener('input', () => {
 
 //DESCARGA IMAGEN - NO FUNCIONA
 
+const botonDescarga = document.getElementById('botonDescarga');
+const contenedorMeme = document.getElementById('contenedorMeme');
+
 botonDescarga.addEventListener('click', () => {
+    console.log('entre al a funcion');
     domtoimage.toBlob(contenedorMeme)
     .then(function (blob) {
     window.saveAs(blob, 'meme.png');
   });
 });
 
+console.log(contenedorMeme);
