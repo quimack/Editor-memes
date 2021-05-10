@@ -13,10 +13,10 @@
         <header class="contenedorHeader flex-column alignitems-center">
             <h1 class="titulo">Generador de Memes</h1>
             <div class="contenedor-botones">
-                    <button id="botonImagen" class="boton-funcional"><i class="fas fa-file-image"></i>Imagen</button>
-                    <button id="botonTexto" class="boton-funcional"><i class="fas fa-font"></i>Texto</button>
-                    <button id="modoClaro" class="boton-funcional"><i class="fas fa-lightbulb"></i>Modo Claro</button>
-                    <button id="modoOscuro" class="boton-funcional oculto oculto-escritorio"><i class="far fa-lightbulb"></i>Modo Oscuro</button> 
+                <button id="botonImagen" class="boton-funcional"><i class="fas fa-file-image"></i>Imagen</button>
+                <button id="botonTexto" class="boton-funcional"><i class="fas fa-font"></i>Texto</button>
+                <button id="modoClaro" class="boton-funcional"><i class="fas fa-lightbulb"></i>Modo Claro</button>
+                <button id="modoOscuro" class="boton-funcional oculto oculto-escritorio"><i class="far fa-lightbulb"></i>Modo Oscuro</button> 
             </div>
         </header>
         <main id="mainPrincipal" class="container-meme flex-column alignitems-center content-center">
@@ -39,69 +39,67 @@
     <aside id="aside" class="panel flex-column oculto">
       <!-- PANEL DE IMAGEN-->
         <section id="panelImagen" class="panel-control-imagen">
-           <button id="cerrarPanelImagen" class="flex-row content-right"><i class="fas fa-times"></i></button>
-           <h1 class="titulo-aside">IMAGEN</h1>
-          
-               <h2 class="titulo-input">URL</h2>
-               <input type="text" id="urlImg" class="input-paneles">
-               <h2 class="titulo-input">FONDO</h2>
-               <div class="flex-row content-space-between">
-                   <input type="color" id="fondoImg" value="#FFFFFF">
-                   <div>
-                       <select name="" id="modoDeMezcla">
-                           <option value="unset">Ninguno</option>
-                           <option value="lighten">Aclarar</option>
-                           <option value="darken">Oscurecer</option>
-                           <option value="difference">Diferencia</option>
-                           <option value="luminosity">Luminosidad</option>
-                           <option value="multiply">Multiplicar</option>
-                       </select>
-                   </div>
-               </div>
-               <h2 class="titulo-input">FILTROS</h2>
-               <div class="flex-column">
-                   <label for="controlBrillo">BRILLO</label>
-                   <input type="range" name="control-brillo" id="controlBrillo" min="0" max="1" value="1" step="0.1">
-               </div>
-               <div class="flex-column">
-                   <label for="controlOpacidad">OPACIDAD</label>
-                   <input type="range" name="control-opacidad" id="controlOpacidad" min="0" max="1" value="1" step="0.1"> 
-               </div>
-               <div class="flex-column">
-                   <label for="controlContraste">CONTRASTE</label>
-                   <input type="range" name="control-contraste" id="controlContraste" min="100" max="1000" value="100">
-               </div>
-               <div class="flex-column">
-                   <label for="controlDesenfoque">DESENFOQUE</label>
-                   <input type="range" name="control-desenfoque" id="controlDesenfoque" min="0" max="10" step="0.1" value="0">
-               </div>
-               <div class="flex-column">
-                   <label for="controlGrises">ESCALA DE GRISES</label>
-                   <input type="range" name="control-grises" id="controlGrises" min="0" max="100" value="0">
-               </div>
-               <div class="flex-column">
-                   <label for="controlSepia">SEPIA</label>
-                   <input type="range" name="control-sepia" id="controlSepia" min="0" max="100" value="0">
-               </div>
-               <div class="flex-column">
-                   <label for="controlHue">HUE</label>
-                   <input type="range" name="control-hue" id="controlHue" min="0" max="360" value="0">
-               </div>
-               <div class="flex-column">
-                   <label for="controlSaturado">SATURADO</label>
-                   <input type="range" name="control-saturado" id="controlSaturado" min="100" max="1000" step="10" value="100">
-               </div>
-               <div class="flex-column">
-                   <label for="controlNegativo">NEGATIVO</label>
-                   <input type="range" name="control-negativo" id="controlNegativo" min="0" max="1" step="0.1" value="0">
-               </div>
-               <button id="reestablecerFiltros">Reestablecer filtros</button>
-           
-       </section>
+            <button id="cerrarPanelImagen" class="boton-cerrar-panel"><i class="fas fa-times"></i></button>
+            <h1 class="titulo-aside">IMAGEN</h1>
+            <h2 class="titulo-input">URL</h2>
+            <input type="text" id="urlImg" class="input-paneles">
+            <h2 class="titulo-input">FONDO</h2>
+            <div class="flex-row content-space-between">
+                <input type="color" id="fondoImg" value="#FFFFFF">
+                <div>
+                    <select name="" class="input-paneles" id="modoDeMezcla">
+                        <option value="unset">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
+                </div>
+            </div>
+            <h2 class="titulo-input">FILTROS</h2>
+            <div class="flex-column">
+                <label for="controlBrillo">BRILLO</label>
+                <input type="range" name="control-brillo" id="controlBrillo" min="0" max="1" value="1" step="0.1">
+            </div>
+            <div class="flex-column">
+                <label for="controlOpacidad">OPACIDAD</label>
+                <input type="range" name="control-opacidad" id="controlOpacidad" min="0" max="1" value="1" step="0.1"> 
+            </div>
+            <div class="flex-column">
+                <label for="controlContraste">CONTRASTE</label>
+                <input type="range" name="control-contraste" id="controlContraste" min="100" max="1000" value="100">
+            </div>
+            <div class="flex-column">
+                <label for="controlDesenfoque">DESENFOQUE</label>
+                <input type="range" name="control-desenfoque" id="controlDesenfoque" min="0" max="10" step="0.1" value="0">
+            </div>
+            <div class="flex-column">
+                <label for="controlGrises">ESCALA DE GRISES</label>
+                <input type="range" name="control-grises" id="controlGrises" min="0" max="100" value="0">
+            </div>
+            <div class="flex-column">
+                <label for="controlSepia">SEPIA</label>
+                <input type="range" name="control-sepia" id="controlSepia" min="0" max="100" value="0">
+            </div>
+            <div class="flex-column">
+                <label for="controlHue">HUE</label>
+                <input type="range" name="control-hue" id="controlHue" min="0" max="360" value="0">
+            </div>
+            <div class="flex-column">
+                <label for="controlSaturado">SATURADO</label>
+                <input type="range" name="control-saturado" id="controlSaturado" min="100" max="1000" step="10" value="100">
+            </div>
+            <div class="flex-column">
+                <label for="controlNegativo">NEGATIVO</label>
+                <input type="range" name="control-negativo" id="controlNegativo" min="0" max="1" step="0.1" value="0">
+            </div>
+            <button id="reestablecerFiltros" class="btn-reestablecer-filtros">Reestablecer filtros</button>
+        </section>
 
        <!--     PANEL DE TEXTO    -->
-       <section id="panelTexto" class="oculto oculto-escritorio">
-           <button id="cerrarPanelTexto"><i class="fas fa-times"></i></button>
+        <section id="panelTexto" class="oculto oculto-escritorio">
+           <button id="cerrarPanelTexto" class="boton-cerrar-panel"><i class="fas fa-times"></i></button>
            <h1 class="titulo-aside">TEXTO</h1>
            <h3 class="titulo-input">SUPERIOR</h3>
            <textarea name="top-text" id="topText" cols="30" rows="10" class="input-paneles">TOP TEXT</textarea>
@@ -112,7 +110,7 @@
            <input type="checkbox" name="sin-texto-inferior" id="sinTextoInferior">
            <label for="sinTextoInferior">Sin texto inferior</label>
            <h3 class="titulo-input">FUENTE</h3>
-           <select name="fuente" id="fuenteTexto">
+           <select name="fuente" id="fuenteTexto" class="input-paneles">
                <option value="Arial">Arial</option>
                <option value="Impact">Impact</option>
                <option value="'Lucida Sans'">Lucida Sans</option>
@@ -128,33 +126,33 @@
                <button class="boton-panel" id="textAlignLeft">
                    <i class="fas fa-align-left"></i>
                </button>
-               <button id="textAlignCenter">
+               <button class="boton-panel" id="textAlignCenter">
                    <i class="fas fa-align-center"></i>
                </button>
-               <button id="textAlignRight">
+               <button class="boton-panel" id="textAlignRight">
                    <i class="fas fa-align-right"></i>
                </button>
            </div>
            <div class="flex-row">
-               <div>
+               <div class="inputs-color-fondo-texto">
                    <h3 class="titulo-input">COLOR</h3>
                    <input type="color" name="color-texto" id="colorTexto">
                </div>
-               <div>
+               <div  class="inputs-color-fondo-texto">
                    <h3 class="titulo-input">FONDO</h3>
-                   <input type="color" name="fondo-texto" id="fondoTexto">
+                   <input type="color" name="fondo-texto" id="fondoTexto" value="#FFFFFF">
                </div>
            </div>
            <input type="checkbox" name="fondo-texto-transparente" id="fondoTextoTransparente">
            <label for="fondoTextoTransparente">Fondo Transparente</label>
            <h3 class="titulo-input">CONTORNO</h3>
-           <button id="contornoTextoNinguno">Ninguno</button>
-           <button id="contornoTextoClaro">Claro</button>
-           <button id="contornoTextoOscuro">Oscuro</button>
+           <button class="boton-panel" id="contornoTextoNinguno">Ninguno</button>
+           <button class="boton-panel" id="contornoTextoClaro">Claro</button>
+           <button class="boton-panel" id="contornoTextoOscuro">Oscuro</button>
            <h3 class="titulo-input">ESPACIADO</h3>
-           <input type="number" name="espaciado-texto" id="espaciadoTexto" min="10" max="50" value="35">
+           <input type="number" class="input-paneles" name="espaciado-texto" id="espaciadoTexto" min="10" max="50" value="35">
            <h3 class="titulo-input">INTERLINEADO</h3>
-           <select name="interlineado-texto" id="interlineadoTexto">
+           <select name="interlineado-texto" class="input-paneles" id="interlineadoTexto">
                <option value="0.8">0.8</option>
                <option value="1">1</option>
                <option value="1.2">1.2</option>

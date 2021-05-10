@@ -12,7 +12,9 @@ const aside = document.querySelector('#aside');
 //URL - IMAGEN
 const urlImg = document.querySelector('#urlImg');
 const imgMeme = document.querySelector('#imgMeme');
-//INPUTS FILTROS:
+const btnFondoImagen = document.querySelector('#fondoImg');
+//INPUTS FILTROS Y MODIFICADORES:
+const divImagenMeme = document.querySelector('#imagen-meme');
 const brillo = document.querySelector('#controlBrillo');
 const opacidad = document.querySelector('#controlOpacidad');
 const contraste = document.querySelector('#controlContraste');
@@ -34,6 +36,7 @@ const tamañoFuente = document.querySelector('#tamañoFuente');
 const colorTexto = document.querySelector('#colorTexto');
 const fondoTexto = document.querySelector('#fondoTexto');
 const fondoTextoTransparente = document.querySelector('#fondoTextoTransparente');
+
 
 //IR A MODO OSCURO 
 modoClaro.addEventListener('click', () => {
@@ -87,7 +90,10 @@ cerrarPanelTexto.addEventListener('click', () => {
 urlImg.addEventListener('input', () => {
     imgMeme.src = urlImg.value
 });                 
-
+//FONDO IMAGEN 
+btnFondoImagen.addEventListener('change', () => {
+    divImagenMeme.style.backgroundColor = btnFondoImagen.value;
+})
 //FILTROS
 const actualizarFiltros = () => {
     imgMeme.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px)
@@ -113,7 +119,7 @@ reestablecerFiltros.addEventListener('click', () =>{
     sepia.value = 0;
     hue.value = 0;
     saturado.value = 100;
-    negativo.value = 1;
+    negativo.value = 0;
     actualizarFiltros();
 });
 
@@ -158,7 +164,7 @@ fondoTextoTransparente.addEventListener('input', () => {
 
 
 
-//DESCARGA IMAGEN - NO FUNCIONA
+//DESCARGA IMAGEN
 
 const botonDescarga = document.getElementById('botonDescarga');
 const contenedorMeme = document.getElementById('contenedorMeme');
