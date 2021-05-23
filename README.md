@@ -3,6 +3,7 @@
 
 Este proyecto se trata de un editor para generar memes. Un programa desde el cual el usuario o la usuaria puede
 manipular dinámicamente el contenido y la estética, tanto del texto como de la imagen. 
+
 Cuenta con Modo Mobile, y Desktop.
 
 ### :hammer: Lenguajes utilizados:
