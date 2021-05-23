@@ -1,3 +1,4 @@
+//DECLARACIÓN DE VARIABLES:
 const body = document.querySelector('#body');
 //BOTONES Y PANELES
 const modoClaro = document.querySelector('#modoClaro');
@@ -11,10 +12,10 @@ const panelMeme = document.querySelector('#panelMeme');
 const aside = document.querySelector('#aside');
 //URL - IMAGEN
 const urlImg = document.querySelector('#urlImg');
-const imgMeme = document.querySelector('#imgMeme');
+const imgMeme = document.querySelector('#imagen-meme');
 const btnFondoImagen = document.querySelector('#fondoImg');
-//INPUTS FILTROS Y MODIFICADORES:
-const divImagenMeme = document.querySelector('#imagen-meme');
+//INPUTS FILTROS Y MODIFICADORES
+const modoDeMezcla = document.querySelector('#modoDeMezcla');
 const brillo = document.querySelector('#controlBrillo');
 const opacidad = document.querySelector('#controlOpacidad');
 const contraste = document.querySelector('#controlContraste');
@@ -25,7 +26,6 @@ const hue = document.querySelector('#controlHue');
 const saturado = document.querySelector('#controlSaturado');
 const negativo = document.querySelector('#controlNegativo');
 const reestablecerFiltros = document.querySelector('#reestablecerFiltros');
-
 //INPUTS TEXTO Y MODIFICADORES
 const topText = document.querySelector('#topText');
 const bottomText = document.querySelector('#bottomText');
@@ -33,11 +33,19 @@ const topTextMeme = document.querySelector('#topTextMeme');
 const bottomTextMeme = document.querySelector('#bottomTextMeme');
 const fuenteTexto = document.querySelector('#fuenteTexto');
 const tamañoFuente = document.querySelector('#tamañoFuente');
+const textAlignLeft = document.querySelector('#textAlignLeft');
+const textAlignCenter = document.querySelector('#textAlignCenter');
+const textAlignRight = document.querySelector('#textAlignRight');
 const colorTexto = document.querySelector('#colorTexto');
 const fondoTexto = document.querySelector('#fondoTexto');
 const fondoTextoTransparente = document.querySelector('#fondoTextoTransparente');
+const contornoTextoNinguno = document.querySelector('#contornoTextoNinguno');
+const contornoTextoClaro = document.querySelector('#contornoTextoClaro');
+const contornoTextoOscuro = document.querySelector('#contornoTextoOscuro');
+const espaciadoTexto = document.querySelector('#espaciadoTexto');
+const interlineadoTexto = document.querySelector('#interlineadoTexto');
 
-
+//FUNCIONALIDADES:
 //IR A MODO OSCURO 
 modoClaro.addEventListener('click', () => {
     body.classList.toggle('dark');
@@ -45,6 +53,7 @@ modoClaro.addEventListener('click', () => {
     modoClaro.classList.toggle('oculto');
     modoOscuro.classList.toggle('oculto');
 });
+
 //IR A MODO CLARO 
 modoOscuro.addEventListener('click', () => {
     body.classList.toggle('dark');
@@ -58,57 +67,62 @@ botonImagen.addEventListener('click', () => {
     aside.classList.remove('oculto')
     panelImagen.classList.remove('oculto');
     panelMeme.classList.add('oculto');
+    //PARA EL MODO ESCRITORIO:
+    panelImagen.classList.remove('oculto-escritorio');
+    panelTexto.classList.add('oculto-escritorio');
 });
-
 //CERRAR PANEL IMAGEN
 cerrarPanelImagen.addEventListener('click', () => {
     aside.classList.add('oculto');
     panelMeme.classList.remove('oculto');
 });
-
 //ABRIR PANEL TEXTO
-
 botonTexto.addEventListener('click', () => {
     panelMeme.classList.add('oculto');
     aside.classList.remove('oculto');
     panelImagen.classList.add('oculto');
     panelTexto.classList.remove('oculto');
+    //PARA EL MODO ESCRITORIO:
+    panelImagen.classList.add('oculto-escritorio');
+    panelTexto.classList.remove('oculto-escritorio');
    
 });
-
 //CERRAR PANEL TEXTO
-
 cerrarPanelTexto.addEventListener('click', () => {
     panelMeme.classList.remove('oculto')
     aside.classList.add('oculto')
     panelTexto.classList.add('oculto')
 }); 
 
-//    FUNCIONALIDADES PANEL IMAGEN
-
+//    FUNCIONALIDADES PANEL IMAGEN:
 //URL
 urlImg.addEventListener('input', () => {
-    imgMeme.src = urlImg.value
+    imgMeme.style.backgroundImage = `url("${urlImg.value}")`;
 });                 
 //FONDO IMAGEN 
 btnFondoImagen.addEventListener('change', () => {
-    divImagenMeme.style.backgroundColor = btnFondoImagen.value;
+    imgMeme.style.backgroundColor = btnFondoImagen.value;
+})
+//MODO MEZCLA
+modoDeMezcla.addEventListener('change', () =>{
+    console.log('me funca')
+    imgMeme.style.backgroundBlendMode = modoDeMezcla.value;
 })
 //FILTROS
 const actualizarFiltros = () => {
     imgMeme.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px)
     grayscale(${grises.value}%) sepia(${sepia.value}%) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
-  }
+}
 
-  brillo.addEventListener("change", actualizarFiltros);
-  opacidad.addEventListener("change", actualizarFiltros);
-  contraste.addEventListener("change", actualizarFiltros);
-  desenfoque.addEventListener("change", actualizarFiltros);
-  grises.addEventListener("change", actualizarFiltros);
-  sepia.addEventListener("change", actualizarFiltros);
-  hue.addEventListener("change", actualizarFiltros);
-  saturado.addEventListener("change", actualizarFiltros);
-  negativo.addEventListener("change", actualizarFiltros);
+brillo.addEventListener("change", actualizarFiltros);
+opacidad.addEventListener("change", actualizarFiltros);
+contraste.addEventListener("change", actualizarFiltros);
+desenfoque.addEventListener("change", actualizarFiltros);
+grises.addEventListener("change", actualizarFiltros);
+sepia.addEventListener("change", actualizarFiltros);
+hue.addEventListener("change", actualizarFiltros);
+saturado.addEventListener("change", actualizarFiltros);
+negativo.addEventListener("change", actualizarFiltros);
 
 reestablecerFiltros.addEventListener('click', () =>{
     brillo.value = 1;
@@ -122,7 +136,6 @@ reestablecerFiltros.addEventListener('click', () =>{
     negativo.value = 0;
     actualizarFiltros();
 });
-
 
 // FUNCIONALIDADES PANEL TEXTO
 topText.addEventListener('input', () =>{
@@ -143,6 +156,21 @@ tamañoFuente.addEventListener('change', () => {
     bottomTextMeme.style.fontSize = `${tamañoFuente.value}px`;
 });
 
+textAlignLeft.addEventListener('click', () => {
+    topTextMeme.style.textAlign = 'left';
+    bottomTextMeme.style.textAlign = 'left';
+});
+
+textAlignCenter.addEventListener('click', () => {
+    topTextMeme.style.textAlign = 'center';
+    bottomTextMeme.style.textAlign = 'center';
+});
+
+textAlignRight.addEventListener('click', () => {
+    topTextMeme.style.textAlign = 'right';
+    bottomTextMeme.style.textAlign = 'right';
+});
+
 colorTexto.addEventListener('change' , () => {
     topTextMeme.style.color = colorTexto.value;
     bottomTextMeme.style.color = colorTexto.value;
@@ -153,19 +181,42 @@ fondoTexto.addEventListener('change', () => {
         bottomTextMeme.style.backgroundColor = fondoTexto.value;
 });
 
-fondoTextoTransparente.addEventListener('input', () => {
-    topTextMeme.style.backgroundColor = "transparent";
-    bottomTextMeme.style.backgroundColor = "transparent";
+fondoTextoTransparente.addEventListener('change', () => {
+    if(fondoTextoTransparente.checked){
+        topTextMeme.style.backgroundColor = btnFondoImagen.value;
+        bottomTextMeme.style.backgroundColor = btnFondoImagen.value;
+    }else{
+        topTextMeme.style.backgroundColor = fondoTexto.value;
+        bottomTextMeme.style.backgroundColor = fondoTexto.value;
+    };
 });
 
+contornoTextoNinguno.addEventListener('click', () => {
+    topTextMeme.style.textShadow = 'none';
+    bottomTextMeme.style.textShadow = 'none';
+});
 
+contornoTextoClaro.addEventListener('click', () => {
+    topTextMeme.style.textShadow = '2px 2px #FFF, -2px 2px #FFF, 2px -2px #FFF, -2px -2px #FFF';
+    bottomTextMeme.style.textShadow = '2px 2px #FFF, -2px 2px #FFF, 2px -2px #FFF, -2px -2px #FFF';
+});
 
+contornoTextoOscuro.addEventListener('click', () => {
+    topTextMeme.style.textShadow = '2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000';
+     bottomTextMeme.style.textShadow = '2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000';
+});
 
+espaciadoTexto.addEventListener('change', () => {
+    const ingresoInputEspaciado = espaciadoTexto.value;
+    topTextMeme.style.padding = `${ingresoInputEspaciado}px 50px`; 
+    bottomTextMeme.style.padding = `${ingresoInputEspaciado}px 50px`; 
+});
 
-
-
+interlineadoTexto.addEventListener('change', () => {
+    topTextMeme.style.lineHeight = interlineadoTexto.value;
+    bottomTextMeme.style.lineHeight = interlineadoTexto.value;
+});
 //DESCARGA IMAGEN
-
 const botonDescarga = document.getElementById('botonDescarga');
 const contenedorMeme = document.getElementById('contenedorMeme');
 
@@ -176,5 +227,3 @@ botonDescarga.addEventListener('click', () => {
     window.saveAs(blob, 'meme.png');
   });
 });
-
-console.log(contenedorMeme);

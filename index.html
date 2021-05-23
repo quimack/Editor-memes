@@ -22,9 +22,7 @@
         <main id="mainPrincipal" class="container-meme flex-column alignitems-center content-center">
             <div class="caja-meme flex-column alignitems-center" id="contenedorMeme">
                 <p class="textos-meme" id="topTextMeme">TOP TEXT</p>
-                <div id="imagen-meme">
-                    <img src="" alt="" id="imgMeme" width="100%" height="100%">
-                </div>
+                <div id="imagen-meme" src="" alt=""></div>  
                 <p class="textos-meme" id="bottomTextMeme">BOTTOM TEXT</p>
             </div>
             <button class="boton-descarga" id="botonDescarga">
@@ -35,11 +33,11 @@
     </section>
     <!-- FIN PANTALLA PRINCIPAL MODO MOBILE -->
 
-    <!-- INICIO ASIDE-->
+    <!-- INICIO ASIDE-->    
     <aside id="aside" class="panel flex-column oculto">
       <!-- PANEL DE IMAGEN-->
         <section id="panelImagen" class="panel-control-imagen">
-            <button id="cerrarPanelImagen" class="boton-cerrar-panel"><i class="fas fa-times"></i></button>
+            <button id="cerrarPanelImagen" class="boton-cerrar-panel oculto-escritorio"><i class="fas fa-times"></i></button>
             <h1 class="titulo-aside">IMAGEN</h1>
             <h2 class="titulo-input">URL</h2>
             <input type="text" id="urlImg" class="input-paneles">
@@ -99,7 +97,7 @@
 
        <!--     PANEL DE TEXTO    -->
         <section id="panelTexto" class="oculto oculto-escritorio">
-           <button id="cerrarPanelTexto" class="boton-cerrar-panel"><i class="fas fa-times"></i></button>
+           <button id="cerrarPanelTexto" class="boton-cerrar-panel oculto-escritorio"><i class="fas fa-times"></i></button>
            <h1 class="titulo-aside">TEXTO</h1>
            <h3 class="titulo-input">SUPERIOR</h3>
            <textarea name="top-text" id="topText" cols="30" rows="10" class="input-paneles">TOP TEXT</textarea>
