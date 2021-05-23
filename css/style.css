@@ -122,6 +122,7 @@ html, body{
     width: 100%;
     flex-grow: 1;
     background-size: cover;
+    background-position: center;
 }
 .textos-meme{
     width: 100%;
