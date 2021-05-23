@@ -12,8 +12,4 @@ HTML, CSS y JavaScript.
 [Puedes clickear aquí para ver el proyecto](https://quimack.github.io/Editor-de-memes/)
 
 ___
-#### _Vista Previa_
-![Ups, la imagen no se cargó](C:\Users\diegui\Desktop\mimeme.png)
-
-___
 :love_letter: _Un agradecimiento especial a todas mis compañeras, entre las cuales nos apoyamos mutuamente! ♥_
