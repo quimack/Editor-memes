@@ -28,7 +28,9 @@ const negativo = document.querySelector('#controlNegativo');
 const reestablecerFiltros = document.querySelector('#reestablecerFiltros');
 //INPUTS TEXTO Y MODIFICADORES
 const topText = document.querySelector('#topText');
+const sinTextoSuperior = document.querySelector('#sinTextoSuperior');
 const bottomText = document.querySelector('#bottomText');
+const sinTextoInferior = document.querySelector('#sinTextoInferior');
 const topTextMeme = document.querySelector('#topTextMeme');
 const bottomTextMeme = document.querySelector('#bottomTextMeme');
 const fuenteTexto = document.querySelector('#fuenteTexto');
@@ -52,6 +54,9 @@ modoClaro.addEventListener('click', () => {
     body.classList.toggle('light');
     modoClaro.classList.toggle('oculto');
     modoOscuro.classList.toggle('oculto');
+    modoClaro.classList.toggle('oculto-escritorio');
+    modoOscuro.classList.toggle('oculto-escritorio');
+    
 });
 
 //IR A MODO CLARO 
@@ -60,6 +65,8 @@ modoOscuro.addEventListener('click', () => {
     body.classList.toggle('light');
     modoClaro.classList.toggle('oculto');
     modoOscuro.classList.toggle('oculto');
+    modoClaro.classList.toggle('oculto-escritorio');
+    modoOscuro.classList.toggle('oculto-escritorio');
 });
 
 //ABRIR PANEL IMAGEN
@@ -142,6 +149,26 @@ topText.addEventListener('input', () =>{
     topTextMeme.innerText = topText.value;
 });
 
+sinTextoSuperior.addEventListener('change', () =>{
+    if(sinTextoSuperior.checked){
+        topTextMeme.classList.add('oculto');
+        topTextMeme.classList.add('oculto-escritorio');
+    }else{
+        topTextMeme.classList.remove('oculto');
+        topTextMeme.classList.remove('oculto-escritorio');
+    }
+});
+
+sinTextoInferior.addEventListener('change', () =>{
+    if(sinTextoInferior.checked){
+        bottomTextMeme.classList.add('oculto');
+        bottomTextMeme.classList.add('oculto-escritorio');
+    }else{
+        bottomTextMeme.classList.remove('oculto');
+        bottomTextMeme.classList.remove('oculto-escritorio');
+    }
+});
+
 bottomText.addEventListener('input', () =>{
     bottomTextMeme.innerText = bottomText.value;
 });
@@ -183,11 +210,15 @@ fondoTexto.addEventListener('change', () => {
 
 fondoTextoTransparente.addEventListener('change', () => {
     if(fondoTextoTransparente.checked){
-        topTextMeme.style.backgroundColor = btnFondoImagen.value;
-        bottomTextMeme.style.backgroundColor = btnFondoImagen.value;
+        topTextMeme.style.backgroundColor = 'transparent';
+        bottomTextMeme.style.backgroundColor = 'transparent';
+        topTextMeme.style.position = 'absolute';
+        bottomTextMeme.style.position = 'absolute';
     }else{
         topTextMeme.style.backgroundColor = fondoTexto.value;
         bottomTextMeme.style.backgroundColor = fondoTexto.value;
+        topTextMeme.style.position = 'static';
+        bottomTextMeme.style.position = 'static';
     };
 });
 
